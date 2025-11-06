@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-function layout() {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>layout</div>
-  )
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
-
-export default layout
