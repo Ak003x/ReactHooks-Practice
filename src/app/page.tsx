@@ -24,7 +24,10 @@ export default function Page() {
       <p>My name is - {input}</p>
       <button onClick={display}>Show me </button>
       <p>num - {count}</p>
-      <button onClick={() => setCount(count + 1)}>Add</button>
+      <button onClick={() => setCount(count + 1)}>+</button>
+      <button onClick={() => (count === 0 ? null : setCount(count - 1))}>
+        -
+      </button>
     </div>
   );
 }
