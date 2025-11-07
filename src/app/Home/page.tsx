@@ -1,12 +1,12 @@
 import React from "react";
 import Page from "../page";
-import UseMemoHook from "../useMemo";
+import UseMemoPage from "../UseMemo/page";
 
 function page() {
   return (
     <div>
       <Page />
-      <UseMemoHook />
+      <UseMemoPage />
     </div>
   );
 }
