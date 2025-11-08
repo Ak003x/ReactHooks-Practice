@@ -1,9 +1,19 @@
-import React from 'react'
+"use client";
+import React, { useState, useEffect } from "react";
 
-function List() {
+export default function List({ getItems }) {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(getItems());
+    console.log("Getting items");
+  }, [getItems]);
+
   return (
-    <div>List</div>
-  )
+    <div>
+      {items.map((item, index) => {
+        return <p key={index}>{item}</p>;
+      })}
+    </div>
+  );
 }
-
-export default List
