@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
-export default function UseCallBack() {
+export default function UseCallBackPage() {
   const [number, setNum] = useState(0);
   const [dark, setDark] = useState(false);
 
@@ -8,14 +9,15 @@ export default function UseCallBack() {
     backgroundColor: dark ? "black" : "white",
     color: dark ? "white" : "black",
   };
+
+  return (
+    <div style={theme}>
+      <input
+        type="number"
+        value={number}
+        onChange={(e) => setNum(e.target.value)}
+      />
+      <button onClick={() => setDark((curr) => !curr)}> Toggle Theme</button>
+    </div>
+  );
 }
-return (
-  <div style={theme}>
-    <input
-      type="number"
-      value={number}
-      onChange={(e) => setNum(e.target.value)}
-    />
-    <button onClick={() => setDark((curr) => !curr)}> Toggle Theme</button>
-  </div>
-);
