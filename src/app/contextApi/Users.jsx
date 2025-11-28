@@ -1,12 +1,11 @@
 import React from "react";
 import User from "./user";
 
-function Users() {
+function Users({ theme }) {
   return (
     <div>
       <h1>Users</h1>
-
-      <User />
+      <User theme={theme} />
     </div>
   );
 }

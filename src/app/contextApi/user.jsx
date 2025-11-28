@@ -1,6 +1,6 @@
 import React from "react";
 
-function User() {
+function User({theme}) {
   return (
     <div>
       <h1>User</h1>
