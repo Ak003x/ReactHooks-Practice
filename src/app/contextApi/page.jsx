@@ -1,21 +1,27 @@
-"use client"
-import React, { useState } from "react";
-
+"use client";
+import React, { useState, createContext } from "react";
 import Users from "./Users";
 
-function ContextApiPage({textStyle}) {
+export const ThemeContext = createContext();
+
+function ContextApiPage({}) {
   const [theme, setTheme] = useState("light");
+
+  const textStyle = {
+    background: theme === "light" ? "white" : "black",
+    color: theme === "light" ? "black" : "white",
+  };
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
 
   return (
-    <div>
+    <ThemeContext.Provider value={{ theme,textStyle }}>
       <h1>Page</h1>
       <button onClick={toggleTheme}>Click Me</button>
-      <Users theme={theme} textStyle={textStyle}/>
-    </div>
+      <Users />
+    </ThemeContext.Provider>
   );
 }
 

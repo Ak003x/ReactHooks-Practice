@@ -1,15 +1,13 @@
-import React from "react";
 import User from "./user";
+import React, { useContext } from "react";
+import { ThemeContext } from "./page";
 
-function Users({ theme }) {
-  const textStyle = {
-    background: theme === "light" ? "white" : "black",
-    color: theme === "light" ? "black" : "white",
-  };
+function Users({}) {
+  const { theme, textStyle } = useContext(ThemeContext);
   return (
     <div>
       <h1 style={textStyle}>Users</h1>
-      <User theme={theme} textStyle={textStyle} />
+      <User />
     </div>
   );
 }
