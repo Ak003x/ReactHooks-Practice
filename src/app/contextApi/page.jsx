@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import Users from "./Users";
 
-function ContextApiPage() {
+function ContextApiPage({textStyle}) {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -14,7 +14,7 @@ function ContextApiPage() {
     <div>
       <h1>Page</h1>
       <button onClick={toggleTheme}>Click Me</button>
-      <Users theme={theme} />
+      <Users theme={theme} textStyle={textStyle}/>
     </div>
   );
 }

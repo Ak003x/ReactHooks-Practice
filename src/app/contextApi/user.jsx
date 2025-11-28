@@ -1,9 +1,11 @@
 import React from "react";
 
-function User({theme}) {
+function User({ theme ,textStyle}) {
+
+
   return (
     <div>
-      <h1>User</h1>
+      <h1 style={textStyle}>User</h1>
     </div>
   );
 }
